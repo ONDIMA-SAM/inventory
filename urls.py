@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('',views.index, name='index'),
-    path('assign', views.assign, name='assign'),
+    path('assign/<serial_number>', views.assign,name='assign'),
+    path('order/', views.order, name='order'),
 ]
