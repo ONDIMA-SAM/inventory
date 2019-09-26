@@ -41,8 +41,9 @@ def order(request):
             s_name = form.cleaned_data['staff_name']
             s_num = form.cleaned_data['staff_number']
             s_department = form.cleaned_data['staff_department']
+            s_equipment = form.cleaned_data['r_equipment']
 
-            staff_request = StaffRequest(staff_name = s_name, staff_number = s_num, staff_department = s_department)
+            staff_request = StaffRequest(staff_name = s_name, staff_number = s_num, staff_department = s_department, r_equipment = s_equipment )
             staff_request.save()
 
         return render(request, 'equipment_assignment.html')

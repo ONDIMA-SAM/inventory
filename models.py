@@ -3,16 +3,16 @@ from django.db import models
 # Create your models here.
 
 class StaffRequest(models.Model):
-    DEVICES = [
+    DEVICES = (
     ('Mon', 'Monitor'),
     ('CPU', 'Central Processing Unit'),
     ('KB', 'Keyboard'),
     ('Mou', 'Mouse'),
-    ]
+    )
     staff_name = models.CharField(max_length=20)
     staff_number = models.IntegerField(primary_key=True, unique=True)
     staff_department = models.CharField(max_length=15)
-    r_equipment = models.CharField(max_length=3, choices=DEVICES)
+    r_equipment = models.CharField(max_length=3, choices=DEVICES, default='comp')
 
     def __str__(self):
         return self.staff_name
